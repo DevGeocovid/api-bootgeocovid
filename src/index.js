@@ -35,7 +35,7 @@ async function getInformationsPage() {
 }
 
 const job = new RecurrenceJob()
-  .executeJob("jobIdentifier", getInformationsPage)
+  .executeJob("getInformationsPage", getInformationsPage)
   .every(1)
   .day()
   .hour(19)
