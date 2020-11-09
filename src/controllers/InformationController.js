@@ -7,6 +7,6 @@ module.exports = {
   },
   async last(request, response) {
     const informations = await Information.find();
-    return response.json(informations.shift());
+    return response.json(informations.pop());
   },
 };
