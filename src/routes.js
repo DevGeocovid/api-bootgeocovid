@@ -6,7 +6,7 @@ const routes = express.Router();
 routes.get("/", (req, res) => {
   return res.json({ message: "Tudo ok!😎" });
 });
-routes.get("/information-es", InformationController.index);
-routes.get("/information-es/last", InformationController.last);
+routes.get("/information", InformationController.index);
+routes.get("/information/last", InformationController.last);
 
 module.exports = routes;
