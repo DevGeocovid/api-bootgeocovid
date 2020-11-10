@@ -31,7 +31,7 @@ async function getInformationsPage() {
     await InformationPage.robo();
   } catch (e) {
     console.log("❌ Dados indisponíveis na página!\n");
-    console.log(e);
+    console.log('Error:\n',e);
   }
 }
 
