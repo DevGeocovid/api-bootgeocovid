@@ -16,7 +16,7 @@
     "mongoose": "^5.8.3",
     "mongose": "^0.0.2-security",
     "node-schedule": "^1.3.2",
-    "puppeteer": "^2.1.1"
+    "puppeteer": "^5.4.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
