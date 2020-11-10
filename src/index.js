@@ -38,7 +38,7 @@ const job = new RecurrenceJob()
   .executeJob("getInformationsPage", getInformationsPage)
   .every(1)
   .day()
-  .hour(18)
-  .minute(00);
+  .hour(15)
+  .minute(47);
 
 scheduler.newJob(job);
