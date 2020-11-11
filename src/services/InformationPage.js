@@ -5,7 +5,10 @@ const Information = require("../models/Information");
 module.exports = {
   async robo() {
     console.log("Bem vindo ao Bot CovidES 🤖");
-    const browser = await puppeteer.launch({ headless: true });
+    const browser = await puppeteer.launch({
+      headless: true,
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    });
     const page = await browser.newPage();
 
     const url = `https://app.powerbi.com/view?r=eyJrIjoiNTlmMDU3ZDEtNDU3Zi00MzZiLTkxN2QtNDhhMDVhOTA2MmU0IiwidCI6IjhiMjA4ZmViLTIyMTYtNDQ1Zi1iZmQxLTk1MjU4ZDlkMjExMSJ9`;
