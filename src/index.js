@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -8,9 +9,9 @@ const scheduler = require("./services/scheduler");
 const { RecurrenceJob } = scheduler;
 
 const InformationPage = require("./services/InformationPage");
+const email = require("./services/email");
 
 //dotenv
-require("dotenv").config();
 
 const port = process.env.PORT;
 
@@ -29,9 +30,11 @@ server.disable("x-powered-by");
 async function getInformationsPage() {
   try {
     await InformationPage.robo();
+      email.send({ type: "success" });
   } catch (e) {
     console.log("❌ Dados indisponíveis na página!\n");
     console.log("Error:\n", e);
+    email.send({ type: "error", e });
   }
 }
 

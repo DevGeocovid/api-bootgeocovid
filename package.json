@@ -8,10 +8,12 @@
     "start": "node src/index.js"
   },
   "dependencies": {
+    "@sendgrid/mail": "^7.4.0",
     "axios": "^0.19.2",
     "cors": "^2.8.5",
     "date-fns": "^2.16.1",
     "dotenv": "^8.2.0",
+    "email": "^0.2.6",
     "express": "^4.17.1",
     "mongoose": "^5.8.3",
     "mongose": "^0.0.2-security",
