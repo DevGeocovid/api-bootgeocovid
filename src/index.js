@@ -8,7 +8,7 @@ const server = express();
 const scheduler = require("./services/scheduler");
 const { RecurrenceJob } = scheduler;
 
-const InformationPage = require("./services/InformationPage");
+const InformationPage = require("./business/InformationPage");
 const email = require("./services/email");
 
 //dotenv

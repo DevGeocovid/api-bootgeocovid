@@ -44,10 +44,10 @@ module.exports = {
           error: false,
           data: {
             date_register: new Date().toISOString(),
-            cases: getCases(),
-            deaths: getDeaths(),
-            refused: getRefused(),
-            suspects: getSuspects(),
+            cases: converters.verifyCommaAndRemove(getCases()),
+            deaths: converters.verifyCommaAndRemove(getDeaths()),
+            refused: converters.verifyCommaAndRemove(getRefused()),
+            suspects: converters.verifyCommaAndRemove(getSuspects()),
           },
         };
       });

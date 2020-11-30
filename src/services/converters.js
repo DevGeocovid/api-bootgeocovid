@@ -1,11 +1,13 @@
 const { format, parseISO } = require("date-fns");
 
-module.exports =  {
+module.exports = {
   formatDate(value) {
     if (value) {
       const formated = format(parseISO(value), "ddMMyyyy");
       return formated;
     }
-  }
-
-}
+  },
+  verifyCommaAndRemove(value) {
+    return value.replace(",", ".");
+  },
+};
