@@ -1,5 +1,5 @@
 const puppeteer = require("puppeteer");
-const converters = require("./converters");
+const converters = require("../services/converters");
 const Information = require("../models/Information");
 
 module.exports = {
