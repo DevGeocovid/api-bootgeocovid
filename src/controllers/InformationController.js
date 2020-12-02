@@ -9,4 +9,5 @@ module.exports = {
     const informations = await Information.find();
     return response.json(informations.pop());
   },
+
 };
