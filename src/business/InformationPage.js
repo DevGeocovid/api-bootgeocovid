@@ -40,6 +40,9 @@ module.exports = {
           document.querySelector(
             "#pvExplorationHost > div > div > exploration > div > explore-canvas-modern > div > div.canvasFlexBox > div > div.displayArea.disableAnimations.fitToWidthOrigin > div.visualContainerHost > visual-container-repeat > visual-container-modern:nth-child(14) > transform > div > div:nth-child(3) > div > visual-modern > div > svg > g:nth-child(1) > text > tspan"
           ).textContent;
+
+        debugger;
+
         return {
           error: false,
           data: {
@@ -60,7 +63,6 @@ module.exports = {
     if (!result.error) {
       console.log("🛠 Informação recuperada!");
       const { date_register, cases, deaths, refused, suspects } = result.data;
-
       const idInformation = converters.formatDate(date_register);
 
       let informationExists = await Information.findOne({

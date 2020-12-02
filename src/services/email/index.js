@@ -28,7 +28,6 @@ class Email {
         <pre>${JSON.stringify(e, null, 2)}</pre>`
         : `<span>${message[type]}</span>`,
     };
-    debugger;
     sgMail
       .send(msg)
       .then(() => {
