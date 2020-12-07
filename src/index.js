@@ -9,7 +9,7 @@ const scheduler = require("./services/scheduler");
 const { RecurrenceJob } = scheduler;
 
 const InformationPage = require("./business/InformationPage");
-const email = require("./services/email");
+// const email = require("./services/email");
 
 //dotenv
 
@@ -30,11 +30,11 @@ server.disable("x-powered-by");
 async function getInformationsPage() {
   try {
     await InformationPage.robo();
-      email.send({ type: "success" });
+      // email.send({ type: "success" });
   } catch (e) {
     console.log("❌ Dados indisponíveis na página!\n");
     console.log("Error:\n", e);
-    email.send({ type: "error", e });
+    // email.send({ type: "error", e });
   }
 }
 
