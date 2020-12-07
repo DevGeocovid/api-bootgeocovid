@@ -47,10 +47,10 @@ module.exports = {
           error: false,
           data: {
             date_register: new Date().toISOString(),
-            cases: converters.verifyCommaAndRemove(getCases()),
-            deaths: converters.verifyCommaAndRemove(getDeaths()),
-            refused: converters.verifyCommaAndRemove(getRefused()),
-            suspects: converters.verifyCommaAndRemove(getSuspects()),
+            cases: getCases().replace(",", "."),
+            deaths: getDeaths().replace(",", "."),
+            refused: getRefused().replace(",", "."),
+            suspects: getSuspects().replace(",", "."),
           },
         };
       });

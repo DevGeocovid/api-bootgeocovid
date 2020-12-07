@@ -7,7 +7,4 @@ module.exports = {
       return formated;
     }
   },
-  verifyCommaAndRemove(value) {
-    return value.replace(",", ".");
-  },
 };
