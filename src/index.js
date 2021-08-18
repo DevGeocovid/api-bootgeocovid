@@ -12,8 +12,9 @@ const InformationPage = require("./business/InformationPage");
 // const email = require("./services/email");
 
 //dotenv
-
 const port = process.env.PORT;
+const HOUR = process.env.HOUR;
+const MINUTES = process.env.MINUTES;
 
 mongoose.connect(process.env.URL_CONNECT_DB, {
   useUnifiedTopology: true,
@@ -30,7 +31,7 @@ server.disable("x-powered-by");
 async function getInformationsPage() {
   try {
     await InformationPage.robo();
-      // email.send({ type: "success" });
+    // email.send({ type: "success" });
   } catch (e) {
     console.log("❌ Dados indisponíveis na página!\n");
     console.log("Error:\n", e);
@@ -42,7 +43,9 @@ const job = new RecurrenceJob()
   .executeJob("getInformationsPage", getInformationsPage)
   .every(1)
   .day()
-  .hour(process.env.HOUR)
-  .minute(process.env.MINUTE);
+  .hour(HOUR)
+  .minute(MINUTES);
 
+console.log("🤖 Bem vindo ao Bot GeoCovidES 🤖");
+console.log("⏰ Agendando a execução da recuperação para às " + HOUR + ":" + MINUTES + '.');
 scheduler.newJob(job);
